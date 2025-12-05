@@ -1,11 +1,66 @@
-.env
-data.json
+# Python
 __pycache__/
-*.pyc
+*.py[cod]
 *.pyo
-venv/
+*.pyd
+*.pyc
+*.pyd
+*.pyo
+*.pym
+
+# Virtual environments
 env/
+venv/
 .venv/
-.DS_Store
-.idea/
+venv.bak/
+ENV/
+
+# Environment / secrets
+.env
+.env.* 
+.env.local
+
+# Databases / local storage
+*.sqlite3
+*.db
+data.db
+*.db-journal
+
+# Local media/cache
+/videos/
+videos/
+*.mp4
+*.mkv
+
+# Editor / OS files
 .vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+.DS_Store
+Thumbs.db
+
+# Python packaging / build
+build/
+dist/
+*.egg-info/
+pip-wheel-metadata/
+.eggs/
+
+# Test / coverage
+.coverage
+htmlcov/
+.pytest_cache/
+
+# Logs
+*.log
+logs/
+
+# Docker
+docker-compose.override.yml
+
+# Misc
+coverage.xml
+celerybeat-schedule
+
+
