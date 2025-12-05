@@ -9,6 +9,7 @@ from datetime import datetime
 from dotenv import load_dotenv
 from telebot import types
 import telebot
+import time
 
 load_dotenv()
 TOKEN = os.getenv("BOT_TOKEN")
@@ -579,23 +580,23 @@ def shutdown(signum, frame):
     except Exception:
         pass
     sys.exit(0)
-
-
+    
+    
 if __name__ == "__main__":
     init_db()
     signal.signal(signal.SIGINT, shutdown)
     signal.signal(signal.SIGTERM, shutdown)
     logger.info("🤖 Bot ishga tushdi...")
+
     if POLLING:
         while True:
             try:
-                bot.polling(none_stop=True, timeout=60, long_polling_timeout=60)
+                bot.polling(none_stop=True, timeout=20, long_polling_timeout=20)
             except Exception as e:
-                logger.exception("Polling error, retrying in 5s")
+                logger.exception(f"Polling xatosi: {e}, 5 soniyadan so'ng qayta urinish...")
                 time.sleep(5)
     else:
         logger.info("Webhook mode not configured. Set BOT_POLLING=1 to use polling.")
-
 
 
 
